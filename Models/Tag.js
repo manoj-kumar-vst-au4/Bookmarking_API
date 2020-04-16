@@ -17,7 +17,7 @@ const tagSchema = new schema ({
 });
 
 tagSchema.pre('save', function(next){
-    now = new Date();
+    now = new Date().getTime();
     this.updated_at = now;
     if(!this.created_at) {
         this.created_at = now
